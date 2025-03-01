@@ -1,12 +1,16 @@
 import clsx from 'clsx'
 import { FC, memo, ReactNode, useState } from 'react'
 
-type Position = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+export type DropdownPosition =
+	| 'top-left'
+	| 'top-right'
+	| 'bottom-left'
+	| 'bottom-right'
 
 interface DropdownProps {
 	children: ReactNode
 	trigger: ReactNode
-	position?: Position
+	position?: DropdownPosition
 }
 
 const Dropdown: FC<DropdownProps> = ({
