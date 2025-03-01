@@ -1,8 +1,19 @@
-import { Accordion, Button, Dropdown, DropdownItem } from '../../../../lib/main'
+import {
+	Accordion,
+	Button,
+	Dropdown,
+	DropdownItem,
+	DropdownPosition,
+} from '../../../../lib/main'
 import Section from '../../../components/Section'
 
 const DropdownPage = () => {
-	const positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
+	const positions = [
+		'top-left',
+		'top-right',
+		'bottom-left',
+		'bottom-right',
+	] as DropdownPosition[]
 
 	return (
 		<div className='p-4 space-y-7'>
