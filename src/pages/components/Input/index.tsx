@@ -1,9 +1,14 @@
-import { Input } from '../../../../lib/main'
+import { Color, Input, InputVariant, Size } from '../../../../lib/main'
 import Section from '../../../components/Section'
 
 const InputPage = () => {
-	const sizes = ['sm', 'md', 'lg']
-	const variants = ['solid', 'light', 'bordered', 'underlined']
+	const sizes = ['sm', 'md', 'lg'] satisfies Size[]
+	const variants = [
+		'solid',
+		'light',
+		'bordered',
+		'underlined',
+	] satisfies InputVariant[]
 	const colors = [
 		'default',
 		'primary',
@@ -11,10 +16,7 @@ const InputPage = () => {
 		'success',
 		'warning',
 		'danger',
-	]
-
-	const codeString =
-		"<Input isError label='Error' errorMessage='Please enter valid email!'/>"
+	] satisfies Color[]
 
 	return (
 		<div className='p-4 space-y-7'>

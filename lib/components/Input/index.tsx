@@ -12,11 +12,11 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Color, Size } from '../../types'
 import Button from '../Button'
 
-type Variant = 'solid' | 'bordered' | 'light' | 'underlined'
+export type InputVariant = 'solid' | 'bordered' | 'light' | 'underlined'
 
 interface InputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-	variant?: Variant
+	variant?: InputVariant
 	size?: Size
 	color?: Color
 	label?: string

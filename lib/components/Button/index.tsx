@@ -5,7 +5,7 @@ import { FC, memo } from 'react'
 import { Color, Size } from '../../types'
 import Loading from '../Loading'
 
-type Variant = 'solid' | 'light' | 'ghost' | 'flat'
+export type ButtonVariant = 'solid' | 'light' | 'ghost' | 'flat'
 
 interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'ref'> {
 	size?: Size
@@ -15,7 +15,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'ref'> {
 	shadow?: boolean
 	loading?: boolean
 	iconOnly?: boolean
-	variant?: Variant
+	variant?: ButtonVariant
 }
 
 const Button: FC<ButtonProps> = ({
@@ -92,7 +92,7 @@ const Button: FC<ButtonProps> = ({
 					$width={24}
 				/>
 			)}
-			{props.children}
+			{props.children as React.ReactNode}
 		</motion.button>
 	)
 }

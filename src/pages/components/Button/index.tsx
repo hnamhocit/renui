@@ -1,4 +1,4 @@
-import { Button } from '../../../../lib/main'
+import { Button, ButtonVariant, Color, Size } from '../../../../lib/main'
 import Section from '../../../components/Section'
 
 export default function ButtonPage() {
@@ -9,10 +9,15 @@ export default function ButtonPage() {
 		'danger',
 		'success',
 		'warning',
-	]
+	] satisfies Color[]
 
-	const sizes = ['sm', 'md', 'lg']
-	const variants = ['solid', 'flat', 'ghost', 'light']
+	const sizes = ['sm', 'md', 'lg'] satisfies Size[]
+	const variants = [
+		'solid',
+		'flat',
+		'ghost',
+		'light',
+	] satisfies ButtonVariant[]
 
 	return (
 		<div className='p-4 space-y-12'>
