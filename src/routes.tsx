@@ -9,6 +9,7 @@ import ImagePage from './pages/components/Image'
 import InputPage from './pages/components/Input'
 import ModalPage from './pages/components/Modal'
 import RadioPage from './pages/components/Radio'
+import SkeletonLoadingPage from './pages/components/SkeletonLoading'
 import SpinnerPage from './pages/components/Spinner'
 import TextAreaPage from './pages/components/TextArea'
 import UserPage from './pages/components/User'
@@ -38,9 +39,10 @@ const routes = [
 				element: <DropdownPage />,
 			},
 			{
-				path: 'loading',
+				path: 'spinner',
 				element: <SpinnerPage />,
 			},
+			{ path: 'skeleton-loading', element: <SkeletonLoadingPage /> },
 			{
 				path: 'accordion',
 				element: <AccordionPage />,
