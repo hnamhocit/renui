@@ -1,9 +1,15 @@
-import { CiLight, CiSearch } from 'react-icons/ci'
-import { FaDiscord, FaGithub } from 'react-icons/fa'
+import { CiLight } from 'react-icons/ci'
+import { FaDiscord, FaGithub, FaSearch } from 'react-icons/fa'
 import { IoMdMenu } from 'react-icons/io'
 import { Link } from 'react-router'
 
-import { Accordion, Button, Dropdown, DropdownItem } from '../../../lib/main'
+import {
+	Accordion,
+	Button,
+	Dropdown,
+	DropdownItem,
+	Input,
+} from '../../../lib/main'
 
 const components = [
 	'button',
@@ -18,11 +24,14 @@ const Header = () => {
 	return (
 		<header className='sticky top-0 inset-x-0 bg-white z-20 h-16 px-4 flex items-center justify-between shadow-md'>
 			<div className='flex items-center gap-3'>
-				<img
-					src='/logo.jpg'
-					alt='Logo'
-					className='w-10 h-10 rounded-full object-cover'
-				/>
+				<Link to={'/'}>
+					<img
+						src='/logo.jpg'
+						alt='Logo'
+						className='w-10 h-10 rounded-full object-cover'
+					/>
+				</Link>
+
 				<div className='text-xl font-bold'>RENUI</div>
 			</div>
 
@@ -30,26 +39,28 @@ const Header = () => {
 				<Button
 					iconOnly
 					rounded>
-					<CiSearch size={20} />
-				</Button>
-
-				<Button
-					iconOnly
-					rounded>
 					<CiLight size={20} />
 				</Button>
 
-				<Button
-					iconOnly
-					rounded>
-					<FaGithub size={20} />
-				</Button>
+				<Link
+					target='_blank'
+					to='https://github.com/hnamhocit'>
+					<Button
+						iconOnly
+						rounded>
+						<FaGithub size={20} />
+					</Button>
+				</Link>
 
-				<Button
-					iconOnly
-					rounded>
-					<FaDiscord size={20} />
-				</Button>
+				<Link
+					to='https://discord.gg/WXK7Q6Ub'
+					target='_blank'>
+					<Button
+						iconOnly
+						rounded>
+						<FaDiscord size={20} />
+					</Button>
+				</Link>
 
 				<Dropdown
 					trigger={
@@ -59,9 +70,11 @@ const Header = () => {
 							<IoMdMenu size={20} />
 						</Button>
 					}>
-					<DropdownItem className='border-2'>
-						Version 0.0.1 beta
-					</DropdownItem>
+					<Input
+						type='search'
+						placeholder='Search here...'
+						endIcon={<FaSearch />}
+					/>
 
 					<Accordion label='Components'>
 						{components.map((component) => (
