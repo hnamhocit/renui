@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { FC, memo, ReactNode, useEffect, useRef, useState } from 'react'
+import { FC, memo, ReactNode, useEffect, useRef, useState } from 'react'
 
 import { Position } from '../../types'
 
