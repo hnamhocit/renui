@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { motion } from 'motion/react'
 import { FC, ReactNode } from 'react'
 
 interface SectionProps {
@@ -10,7 +11,13 @@ interface SectionProps {
 
 const Section: FC<SectionProps> = ({ children, label, flex, className }) => {
 	return (
-		<div className='space-y-2'>
+		<motion.div
+			initial={{
+				translateY: 16,
+				opacity: 0,
+			}}
+			whileInView={{ translateY: 0, opacity: 1 }}
+			className='space-y-2'>
 			<div className='text-xl font-semibold'>{label}</div>
 
 			<div
@@ -20,7 +27,7 @@ const Section: FC<SectionProps> = ({ children, label, flex, className }) => {
 				)}>
 				{children}
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

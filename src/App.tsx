@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { useState } from 'react'
 import { FaBook } from 'react-icons/fa'
 import { IoIosSend } from 'react-icons/io'
@@ -16,13 +17,25 @@ export default function App() {
 					backgroundImage: 'url(/background.jpg)',
 				}}>
 				<div className='flex flex-col text-white items-center justify-center text-center gap-5'>
-					<h1 className='text-5xl font-black'> React New UI </h1>
+					<motion.h1
+						initial={{ opacity: 0, translateY: 16 }}
+						animate={{ opacity: 1, translateY: 0 }}
+						className='text-5xl font-black'>
+						{' '}
+						React New UI{' '}
+					</motion.h1>
 
-					<p className='text-2xl font-semibold'>
+					<motion.p
+						initial={{ opacity: 0, translateY: 16 }}
+						animate={{ opacity: 1, translateY: 0 }}
+						className='text-2xl font-semibold'>
 						Build by developers for developers
-					</p>
+					</motion.p>
 
-					<div className='flex items-center gap-3'>
+					<motion.div
+						initial={{ opacity: 0, scale: 0 }}
+						animate={{ opacity: 1, scale: 1 }}
+						className='flex items-center gap-3'>
 						<Button
 							variant='ghost'
 							rounded
@@ -44,27 +57,38 @@ export default function App() {
 								<IoCopy />
 							</Button>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 
 			<div className='space-y-4 p-4'>
-				<div className='text-4xl font-bold'>
+				<motion.div
+					initial={{ opacity: 0, translateY: 16 }}
+					whileInView={{ opacity: 1, translateY: 0 }}
+					className='text-4xl font-bold'>
 					Why <span className='primary-heading'>RENUI</span>?
-				</div>
-				<div>
+				</motion.div>
+
+				<motion.div
+					initial={{ opacity: 0, translateY: 16 }}
+					whileInView={{ opacity: 1, translateY: 0 }}>
 					<span className='font-semibold primary-heading'>RENUI</span>{' '}
 					is a new react ui library with motto is "Build by developers
 					for developers", aim to fast, reliable, free and beautiful
 					🔥.
-				</div>
+				</motion.div>
 
-				<div>
+				<motion.div
+					initial={{ opacity: 0, translateY: 16 }}
+					whileInView={{ opacity: 1, translateY: 0 }}>
 					Build on top tailwindcss and motion for optimize performant
 					and animations ⚡.
-				</div>
+				</motion.div>
 
-				<div className='flex flex-col gap-3 py-3 px-6 border rounded-2xl'>
+				<motion.div
+					initial={{ opacity: 0, scale: 0 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					className='flex flex-col gap-3 py-3 px-6 border rounded-2xl'>
 					<div className='text-center text-3xl font-bold'>
 						Join our wait list
 					</div>
@@ -104,7 +128,7 @@ export default function App() {
 						<IoIosSend size={20} />
 						Register
 					</Button>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	)

@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { CiLight } from 'react-icons/ci'
 import { FaDiscord, FaGithub, FaSearch } from 'react-icons/fa'
 import { IoMdMenu } from 'react-icons/io'
@@ -15,7 +16,10 @@ import routes from '../../routes'
 const Header = () => {
 	return (
 		<header className='sticky top-0 inset-x-0 bg-white z-20 h-16 px-4 flex items-center justify-between shadow-md'>
-			<div className='flex items-center gap-3'>
+			<motion.div
+				initial={{ opacity: 0, translateY: 16 }}
+				animate={{ opacity: 1, translateY: 0 }}
+				className='flex items-center gap-3'>
 				<Link to={'/'}>
 					<img
 						src='/logo.jpg'
@@ -25,9 +29,12 @@ const Header = () => {
 				</Link>
 
 				<div className='text-xl font-bold'>RENUI</div>
-			</div>
+			</motion.div>
 
-			<div className='flex items-center gap-3'>
+			<motion.div
+				initial={{ opacity: 0, translateY: 16 }}
+				animate={{ opacity: 1, translateY: 0 }}
+				className='flex items-center gap-3'>
 				<Button
 					iconOnly
 					rounded>
@@ -92,7 +99,7 @@ const Header = () => {
 							))}
 					</Accordion>
 				</Dropdown>
-			</div>
+			</motion.div>
 		</header>
 	)
 }
