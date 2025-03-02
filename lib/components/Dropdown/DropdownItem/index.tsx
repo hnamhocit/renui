@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { HTMLMotionProps, motion } from 'motion/react'
 import { FC, memo } from 'react'
 
-const Item: FC<Omit<HTMLMotionProps<'button'>, 'ref'>> = ({
+const DropdownItem: FC<Omit<HTMLMotionProps<'button'>, 'ref'>> = ({
 	children,
 	...props
 }) => {
@@ -19,4 +19,4 @@ const Item: FC<Omit<HTMLMotionProps<'button'>, 'ref'>> = ({
 	)
 }
 
-export default memo(Item)
+export default memo(DropdownItem)

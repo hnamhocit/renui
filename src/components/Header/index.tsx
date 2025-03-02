@@ -10,15 +10,7 @@ import {
 	DropdownItem,
 	Input,
 } from '../../../lib/main'
-
-const components = [
-	'button',
-	'input',
-	'modal',
-	'dropdown',
-	'loading',
-	'accordion',
-].sort()
+import routes from '../../routes'
 
 const Header = () => {
 	return (
@@ -77,15 +69,27 @@ const Header = () => {
 					/>
 
 					<Accordion label='Components'>
-						{components.map((component) => (
-							<Link
-								key={component}
-								to={`/components/${component}`}>
-								<DropdownItem className='capitalize font-medium'>
-									{component}
-								</DropdownItem>
-							</Link>
-						))}
+						{(routes[1]?.children ?? [])
+							.sort(function (a, b) {
+								if (a.path < b.path) {
+									return -1
+								}
+
+								if (a.path > b.path) {
+									return 1
+								}
+
+								return 0
+							})
+							.map((route) => (
+								<Link
+									key={route.path}
+									to={`/components/${route.path}`}>
+									<DropdownItem className='capitalize font-medium'>
+										{route.path}
+									</DropdownItem>
+								</Link>
+							))}
 					</Accordion>
 				</Dropdown>
 			</div>

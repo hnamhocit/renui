@@ -3,8 +3,9 @@ import {
 	Button,
 	Dropdown,
 	DropdownItem,
-	DropdownPosition,
+	Position,
 } from '../../../../lib/main'
+import Intro from '../../../components/Intro'
 import Section from '../../../components/Section'
 
 const DropdownPage = () => {
@@ -13,10 +14,15 @@ const DropdownPage = () => {
 		'top-right',
 		'bottom-left',
 		'bottom-right',
-	] as DropdownPosition[]
+	] as Position[]
 
 	return (
-		<div className='p-4 space-y-7'>
+		<>
+			<Intro
+				title='Dropdown'
+				description='Dropdowns allow users to select one or more items from a list of options.'
+			/>
+
 			<Section label='Simple dropdown'>
 				<Dropdown
 					position='top-left'
@@ -59,7 +65,7 @@ const DropdownPage = () => {
 					</Accordion>
 				</Dropdown>
 			</Section>
-		</div>
+		</>
 	)
 }
 

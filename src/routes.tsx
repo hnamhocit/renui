@@ -1,10 +1,17 @@
 import App from './App'
-import Accordion from './pages/components/Accordion'
-import Button from './pages/components/Button'
-import Dropdown from './pages/components/Dropdown'
-import Input from './pages/components/Input'
-import Loading from './pages/components/Loading'
-import Modal from './pages/components/Modal'
+import AccordionPage from './pages/components/Accordion'
+import AvatarPage from './pages/components/Avatar'
+import BadgePage from './pages/components/Badge'
+import ButtonPage from './pages/components/Button'
+import CheckboxPage from './pages/components/Checkbox'
+import DropdownPage from './pages/components/Dropdown'
+import ImagePage from './pages/components/Image'
+import InputPage from './pages/components/Input'
+import ModalPage from './pages/components/Modal'
+import RadioPage from './pages/components/Radio'
+import SpinnerPage from './pages/components/Spinner'
+import TextAreaPage from './pages/components/TextArea'
+import UserPage from './pages/components/User'
 
 const routes = [
 	{
@@ -16,27 +23,55 @@ const routes = [
 		children: [
 			{
 				path: 'button',
-				element: <Button />,
+				element: <ButtonPage />,
 			},
 			{
 				path: 'input',
-				element: <Input />,
+				element: <InputPage />,
 			},
 			{
 				path: 'modal',
-				element: <Modal />,
+				element: <ModalPage />,
 			},
 			{
 				path: 'dropdown',
-				element: <Dropdown />,
+				element: <DropdownPage />,
 			},
 			{
 				path: 'loading',
-				element: <Loading />,
+				element: <SpinnerPage />,
 			},
 			{
 				path: 'accordion',
-				element: <Accordion />,
+				element: <AccordionPage />,
+			},
+			{
+				path: 'image',
+				element: <ImagePage />,
+			},
+			{
+				path: 'avatar',
+				element: <AvatarPage />,
+			},
+			{
+				path: 'badge',
+				element: <BadgePage />,
+			},
+			{
+				path: 'checkbox',
+				element: <CheckboxPage />,
+			},
+			{
+				path: 'radio',
+				element: <RadioPage />,
+			},
+			{
+				path: 'textarea',
+				element: <TextAreaPage />,
+			},
+			{
+				path: 'user',
+				element: <UserPage />,
 			},
 		],
 	},

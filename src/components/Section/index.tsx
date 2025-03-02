@@ -5,14 +5,19 @@ interface SectionProps {
 	label: string
 	children: ReactNode
 	flex?: boolean
+	className?: string
 }
 
-const Section: FC<SectionProps> = ({ children, label, flex }) => {
+const Section: FC<SectionProps> = ({ children, label, flex, className }) => {
 	return (
 		<div className='space-y-2'>
 			<div className='text-xl font-semibold'>{label}</div>
 
-			<div className={clsx(flex && 'flex items-center gap-3 flex-wrap')}>
+			<div
+				className={clsx(
+					flex && 'flex items-center gap-3 flex-wrap',
+					className,
+				)}>
 				{children}
 			</div>
 		</div>

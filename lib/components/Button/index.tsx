@@ -3,7 +3,7 @@ import { HTMLMotionProps, motion } from 'motion/react'
 import { FC, memo } from 'react'
 
 import { Color, Size } from '../../types'
-import Loading from '../Loading'
+import Spinner from '../Spinner'
 
 export type ButtonVariant = 'solid' | 'light' | 'ghost' | 'flat'
 
@@ -87,7 +87,8 @@ const Button: FC<ButtonProps> = ({
 			)}
 			{...props}>
 			{loading && (
-				<Loading
+				<Spinner
+					$color='#FFF'
 					$height={24}
 					$width={24}
 				/>

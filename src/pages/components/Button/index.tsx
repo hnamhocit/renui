@@ -1,4 +1,5 @@
 import { Button, ButtonVariant, Color, Size } from '../../../../lib/main'
+import Intro from '../../../components/Intro'
 import Section from '../../../components/Section'
 
 export default function ButtonPage() {
@@ -20,101 +21,104 @@ export default function ButtonPage() {
 	] satisfies ButtonVariant[]
 
 	return (
-		<div className='p-4 space-y-12'>
-			<div className='space-y-7'>
-				<Section
-					flex
-					label='Size'>
-					{sizes.map((size) => (
-						<Button
-							key={size}
-							size={size}>
-							Text
-						</Button>
-					))}
-				</Section>
+		<>
+			<Intro
+				title='Button'
+				description='Button component for triggering an action.'
+			/>
 
-				<Section
-					flex
-					label='Color'>
-					{colors.map((color) => (
-						<Button
-							key={color}
-							color={color}>
-							Text
-						</Button>
-					))}
-				</Section>
-
-				<Section
-					flex
-					label='Variant'>
-					{variants.map((variant) => (
-						<div
-							key={variant}
-							className='space-y-2'>
-							{colors.map((color) => (
-								<Button
-									rounded
-									variant={variant}
-									key={color}
-									color={color}>
-									{variant}
-								</Button>
-							))}
-						</div>
-					))}
-				</Section>
-
-				<Section
-					flex
-					label='Shadow'>
-					{colors.map((color) => (
-						<Button
-							key={color}
-							color={color}
-							shadow>
-							{color}
-						</Button>
-					))}
-				</Section>
-
-				<Section
-					flex
-					label='State'>
+			<Section
+				flex
+				label='Size'>
+				{sizes.map((size) => (
 					<Button
-						color='primary'
-						rounded
-						disabled={true}>
-						Disabled
+						key={size}
+						size={size}>
+						Text
 					</Button>
+				))}
+			</Section>
 
+			<Section
+				flex
+				label='Color'>
+				{colors.map((color) => (
 					<Button
-						color='primary'
-						rounded
-						disabled
-						loading>
-						Loading
+						key={color}
+						color={color}>
+						Text
 					</Button>
-				</Section>
+				))}
+			</Section>
 
-				<Section
-					flex
-					label='Other'>
-					<Button
-						rounded
-						color='primary'>
-						Rounded
-					</Button>
+			<Section
+				flex
+				label='Variant'>
+				{variants.map((variant) => (
+					<div
+						key={variant}
+						className='space-y-2'>
+						{colors.map((color) => (
+							<Button
+								rounded
+								variant={variant}
+								key={color}
+								color={color}>
+								{variant}
+							</Button>
+						))}
+					</div>
+				))}
+			</Section>
 
+			<Section
+				flex
+				label='Shadow'>
+				{colors.map((color) => (
 					<Button
-						fullWidth
-						rounded
-						color='secondary'>
-						Full width
+						key={color}
+						color={color}
+						shadow>
+						{color}
 					</Button>
-				</Section>
-			</div>
-		</div>
+				))}
+			</Section>
+
+			<Section
+				flex
+				label='State'>
+				<Button
+					color='primary'
+					rounded
+					disabled={true}>
+					Disabled
+				</Button>
+
+				<Button
+					color='primary'
+					rounded
+					disabled
+					loading>
+					Loading
+				</Button>
+			</Section>
+
+			<Section
+				flex
+				label='Other'>
+				<Button
+					rounded
+					color='primary'>
+					Rounded
+				</Button>
+
+				<Button
+					fullWidth
+					rounded
+					color='secondary'>
+					Full width
+				</Button>
+			</Section>
+		</>
 	)
 }

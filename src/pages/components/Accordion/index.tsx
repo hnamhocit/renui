@@ -1,9 +1,15 @@
 import { Accordion } from '../../../../lib/main'
+import Intro from '../../../components/Intro'
 import Section from '../../../components/Section'
 
 const AccordionPage = () => {
 	return (
-		<div className='p-4 space-y-7'>
+		<>
+			<Intro
+				title='Accordion'
+				description='Accordion component for collapsed data'
+			/>
+
 			<Section label='Sample'>
 				<Accordion label='Accordion'>
 					<div className='p-2'>
@@ -15,7 +21,7 @@ const AccordionPage = () => {
 					</div>
 				</Accordion>
 			</Section>
-		</div>
+		</>
 	)
 }
 

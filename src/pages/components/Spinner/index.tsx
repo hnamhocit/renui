@@ -1,19 +1,19 @@
-import { Loading } from '../../../../lib/components'
+import { Spinner } from '../../../../lib/components'
 import Section from '../../../components/Section'
 
-const LoadingPage = () => {
+const SpinnerPage = () => {
 	return (
-		<div className='p-4 space-y-7'>
+		<>
 			<Section
 				flex
 				label='Sample'>
-				<Loading />
+				<Spinner />
 			</Section>
 
 			<Section
 				flex
 				label='Width & Height'>
-				<Loading
+				<Spinner
 					$width={100}
 					$height={100}
 				/>
@@ -22,10 +22,10 @@ const LoadingPage = () => {
 			<Section
 				flex
 				label='Color'>
-				<Loading $color='blue' />
+				<Spinner $color='blue' />
 			</Section>
-		</div>
+		</>
 	)
 }
 
-export default LoadingPage
+export default SpinnerPage

@@ -32,7 +32,9 @@ createRoot(document.getElementById('root')!).render(
 									element={
 										<>
 											<Header />
-											{_route.element}
+											<div className='p-4 space-y-7 scrollbar-hide'>
+												{_route.element}
+											</div>
 										</>
 									}
 								/>

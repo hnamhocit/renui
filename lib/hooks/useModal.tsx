@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useDropdown = () => {
+export const useModal = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const onOpen = () => setIsOpen(true)

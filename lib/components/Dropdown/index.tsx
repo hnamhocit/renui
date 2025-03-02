@@ -1,16 +1,12 @@
 import clsx from 'clsx'
-import { FC, memo, ReactNode, useState } from 'react'
+import React, { FC, memo, ReactNode, useEffect, useRef, useState } from 'react'
 
-export type DropdownPosition =
-	| 'top-left'
-	| 'top-right'
-	| 'bottom-left'
-	| 'bottom-right'
+import { Position } from '../../types'
 
 interface DropdownProps {
 	children: ReactNode
 	trigger: ReactNode
-	position?: DropdownPosition
+	position?: Position
 }
 
 const Dropdown: FC<DropdownProps> = ({
@@ -20,12 +16,26 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [y, x] = position.split('-')
+	const ref = useRef<HTMLDivElement>(null)
 
-	const toggleIsOpen = () => setIsOpen((prev) => !prev)
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
+				setIsOpen(false)
+			}
+		}
+
+		document.addEventListener('mousedown', handleClickOutside)
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [])
 
 	return (
-		<div className='relative w-fit'>
-			<div onClick={toggleIsOpen}>{trigger}</div>
+		<div
+			ref={ref}
+			className='relative w-fit'>
+			<div onClick={() => setIsOpen((prev) => !prev)}>{trigger}</div>
 
 			<div
 				className={clsx(

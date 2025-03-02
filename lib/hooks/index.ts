@@ -1,1 +1,1 @@
-export * from './useDropdown'
+export * from './useModal'

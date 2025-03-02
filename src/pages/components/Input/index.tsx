@@ -1,4 +1,5 @@
 import { Color, Input, InputVariant, Size } from '../../../../lib/main'
+import Intro from '../../../components/Intro'
 import Section from '../../../components/Section'
 
 const InputPage = () => {
@@ -19,7 +20,12 @@ const InputPage = () => {
 	] satisfies Color[]
 
 	return (
-		<div className='p-4 space-y-7'>
+		<>
+			<Intro
+				title='Input'
+				description='Input component for handle form input & error handling'
+			/>
+
 			<Section
 				flex
 				label='Sizes'>
@@ -66,7 +72,7 @@ const InputPage = () => {
 					errorMessage='Please enter valid email!'
 				/>
 			</Section>
-		</div>
+		</>
 	)
 }
 
