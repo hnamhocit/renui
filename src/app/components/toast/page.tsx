@@ -148,7 +148,7 @@ const ToastPage = () => {
 						key={type}
 						onClick={() =>
 							showToast({
-								rounded: true,
+								isRounded: true,
 								type,
 								content: type,
 							})
@@ -162,7 +162,7 @@ const ToastPage = () => {
 				<Button
 					onClick={() =>
 						showToast({
-							rounded: true,
+							isRounded: true,
 							content: '123',
 						})
 					}>
