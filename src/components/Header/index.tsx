@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import { CiLight } from 'react-icons/ci'
 import { FaDiscord, FaGithub, FaSearch } from 'react-icons/fa'
 import { IoMdMenu } from 'react-icons/io'
@@ -28,6 +29,8 @@ const routes = [
 ]
 
 const Header = () => {
+	const [q, setQ] = useState('')
+
 	return (
 		<header className='sticky top-0 inset-x-0 bg-white z-20 h-16 px-4 flex items-center justify-between shadow-md'>
 			<motion.div
@@ -88,8 +91,28 @@ const Header = () => {
 					<Input
 						type='search'
 						placeholder='Search here...'
+						value={q}
+						onChange={(e) => setQ(e.target.value)}
 						endIcon={<FaSearch />}
 					/>
+
+					{q.trim().length > 0 && (
+						<div className='p-2'>
+							{routes
+								.filter((route) =>
+									route.includes(q.trim().toLowerCase()),
+								)
+								.map((route) => (
+									<Link
+										key={route}
+										href={`/components/${route}`}>
+										<DropdownItem className='capitalize font-medium'>
+											{route}
+										</DropdownItem>
+									</Link>
+								))}
+						</div>
+					)}
 
 					<Accordion label='Components'>
 						{routes.map((route) => (

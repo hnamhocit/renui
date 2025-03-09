@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { Avatar, Button, Input } from 'renui'
+import { Avatar, Button, Input, Link } from 'renui'
 
 const Footer = () => {
 	return (
@@ -40,6 +39,8 @@ const Footer = () => {
 				<div className='text-xl font-semibold'>Products</div>
 
 				<Link
+					isUnderline
+					color='secondary'
 					target='_blank'
 					href='https://github.com/hnamhocit/renui'
 					className='underline block'>
@@ -47,6 +48,8 @@ const Footer = () => {
 				</Link>
 
 				<Link
+					isUnderline
+					color='secondary'
 					target='_blank'
 					href='https://github.com/hnamhocit/renui-lib'
 					className='underline block'>
@@ -58,6 +61,8 @@ const Footer = () => {
 				<div className='text-xl font-semibold'>Contact</div>
 
 				<Link
+					isUnderline
+					color='secondary'
 					target='_blank'
 					href='https://facebook.com/hnamhocit'
 					className='flex items-center gap-3 underline'>
@@ -65,6 +70,8 @@ const Footer = () => {
 				</Link>
 
 				<Link
+					isUnderline
+					color='secondary'
 					target='_blank'
 					href='https://m.me/hnamhocit'
 					className='flex items-center gap-3 underline'>
@@ -72,6 +79,8 @@ const Footer = () => {
 				</Link>
 
 				<Link
+					isUnderline
+					color='secondary'
 					target='_blank'
 					href='https://github.com/hnamhocit'
 					className='flex items-center gap-3 underline'>

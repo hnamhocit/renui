@@ -2,7 +2,7 @@
 
 import { useContext } from 'react'
 import { AiFillThunderbolt } from 'react-icons/ai'
-import { FaAngleRight, FaCopy } from 'react-icons/fa'
+import { FaAngleRight, FaBook, FaCopy } from 'react-icons/fa'
 import { FaBookOpenReader } from 'react-icons/fa6'
 import { IoShieldCheckmark } from 'react-icons/io5'
 import { Button, Image, ToastContext } from 'renui'
@@ -13,7 +13,7 @@ const customers = [
 	'/netflix.svg',
 	'/shutterstock-dark.svg',
 	'/spotify-dark.svg',
-	'unity-dark',
+	'/unity-dark.svg',
 ]
 
 export default function Home() {
@@ -43,8 +43,9 @@ export default function Home() {
 					<div className='flex items-center justify-center gap-3'>
 						<Button
 							isRounded
-							color='secondary'
-							variant='border'>
+							variant='flat'
+							color='secondary'>
+							<FaBook size={20} />
 							Documents
 						</Button>
 
@@ -60,7 +61,7 @@ export default function Home() {
 							color='primary'>
 							<div>npm i renui</div>
 
-							<FaCopy />
+							<FaCopy size={20} />
 						</Button>
 					</div>
 				</div>
@@ -139,7 +140,7 @@ export default function Home() {
 						</div>
 
 						<div>
-							Find out why MUI&apos;s tools are trusted by
+							Find out why RenUI&apos;s tools are trusted by
 							thousands of open-source developers and teams around
 							the world.
 						</div>
