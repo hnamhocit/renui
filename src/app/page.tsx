@@ -7,6 +7,15 @@ import { FaBookOpenReader } from 'react-icons/fa6'
 import { IoShieldCheckmark } from 'react-icons/io5'
 import { Button, Image, ToastContext } from 'renui'
 
+const customers = [
+	'/amazon-dark.svg',
+	'/nasa.svg',
+	'/netflix.svg',
+	'/shutterstock-dark.svg',
+	'/spotify-dark.svg',
+	'unity-dark',
+]
+
 export default function Home() {
 	const { showToast } = useContext(ToastContext)
 	return (
@@ -35,7 +44,7 @@ export default function Home() {
 						<Button
 							isRounded
 							color='secondary'
-							variant='ghost'>
+							variant='border'>
 							Documents
 						</Button>
 
@@ -98,35 +107,13 @@ export default function Home() {
 					</div>
 
 					<div className='flex items-center justify-evenly gap-5'>
-						<Image
-							src='https://mui.com/static/branding/companies/spotify-dark.svg'
-							alt=''
-						/>
-
-						<Image
-							src='https://mui.com/static/branding/companies/amazon-dark.svg'
-							alt=''
-						/>
-
-						<Image
-							src='https://mui.com/static/branding/companies/nasa.svg'
-							alt=''
-						/>
-
-						<Image
-							src='https://mui.com/static/branding/companies/netflix.svg'
-							alt=''
-						/>
-
-						<Image
-							src='https://mui.com/static/branding/companies/unity-dark.svg'
-							alt=''
-						/>
-
-						<Image
-							src='https://mui.com/static/branding/companies/shutterstock-dark.svg'
-							alt=''
-						/>
+						{customers.map((customer) => (
+							<Image
+								src={customer}
+								alt={customer}
+								key={customer}
+							/>
+						))}
 					</div>
 
 					<div className='text-center'>

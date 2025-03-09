@@ -19,7 +19,7 @@ export default function ButtonPage() {
 	const variants = [
 		'solid',
 		'flat',
-		'ghost',
+		'border',
 		'light',
 	] satisfies ButtonVariant[]
 

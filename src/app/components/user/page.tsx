@@ -15,7 +15,7 @@ const UserPage = () => {
 
 			<Section label='User'>
 				<User
-					photoURL='/logo.jpg'
+					photoURL='https://avatars.githubusercontent.com/u/98753616?v=4'
 					name='Nguyen Hoang Nam'
 					description='CEO | FOUNDER of RenUI'
 				/>

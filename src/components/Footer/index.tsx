@@ -28,7 +28,7 @@ const Footer = () => {
 					/>
 
 					<Button
-						variant='ghost'
+						variant='border'
 						color='secondary'
 						isRounded>
 						Subscribe
