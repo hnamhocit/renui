@@ -55,6 +55,15 @@ const Footer = () => {
 					className='underline block'>
 					RenUI library
 				</Link>
+
+				<Link
+					isUnderline
+					color='secondary'
+					target='_blank'
+					href='https://npmjs.com/package/renui'
+					className='underline block'>
+					RenUI NPM
+				</Link>
 			</div>
 
 			<div className='space-y-3'>

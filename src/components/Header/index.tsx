@@ -18,6 +18,7 @@ const routes = [
 	'dropdown',
 	'image',
 	'input',
+	'link',
 	'modal',
 	'radio',
 	'skeleton-loading',
