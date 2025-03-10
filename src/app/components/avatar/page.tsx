@@ -23,7 +23,12 @@ const AvatarPage = () => {
 				description='Avatar component for displaying user profile pictures.'
 			/>
 
-			<Section label='Sample'>
+			<Section
+				code={`<Avatar
+	src='/logo.jpg'
+	alt='Logo' 
+/>`}
+				label='Sample'>
 				<Avatar
 					src='/logo.jpg'
 					alt='Logo'
@@ -31,6 +36,15 @@ const AvatarPage = () => {
 			</Section>
 
 			<Section
+				code={`const sizes = ['lg', 'md', 'sm'] 
+return sizes.map((size, index) => (
+	<Avatar
+		key={index}
+		src='/logo.jpg'
+		alt='Logo'
+		size={size}
+	/>
+	))`}
 				flex
 				label='Sizes'>
 				{sizes.map((size, index) => (
@@ -43,7 +57,13 @@ const AvatarPage = () => {
 				))}
 			</Section>
 
-			<Section label='Rounded'>
+			<Section
+				code={`<Avatar
+	src='/logo.jpg'
+	alt='Logo'
+	isRounded
+/>`}
+				label='Rounded'>
 				<Avatar
 					src='/logo.jpg'
 					alt='Logo'
@@ -51,7 +71,14 @@ const AvatarPage = () => {
 				/>
 			</Section>
 
-			<Section label='With Zoom'>
+			<Section
+				code={`<Avatar
+	src='/logo.jpg'
+	alt='Logo'
+	isRounded
+	isZoom
+/>`}
+				label='With Zoom'>
 				<Avatar
 					src='/logo.jpg'
 					alt='Logo'
@@ -61,6 +88,18 @@ const AvatarPage = () => {
 			</Section>
 
 			<Section
+				code={`const colors = ['default','primary','secondary','danger','success','warning',]
+				
+return colors.map((color, index) => (
+	<Avatar
+		key={index}
+		src='/logo.jpg'
+		alt='Logo'
+		color={color}
+		isRounded
+		isBordered
+	/>
+))`}
 				flex
 				label='Border with Colors'>
 				{colors.map((color, index) => (

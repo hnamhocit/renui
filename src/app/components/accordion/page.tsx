@@ -13,9 +13,19 @@ const AccordionPage = () => {
 				description='Accordion component for collapsed data'
 			/>
 
-			<Section label='Sample'>
+			<Section
+				label='Sample'
+				code={`<Accordion label='Accordion'>
+	<div>
+		Lorem ipsum, dolor sit amet consectetur adipisicing
+		elit. Earum quam, dolores repellendus aliquam accusamus
+		natus placeat temporibus iusto quibusdam eum repudiandae
+		tenetur atque voluptatibus, perferendis magnam ipsum
+		voluptatum nihil tempora.
+	</div>
+</Accordion>`}>
 				<Accordion label='Accordion'>
-					<div className='p-2'>
+					<div>
 						Lorem ipsum, dolor sit amet consectetur adipisicing
 						elit. Earum quam, dolores repellendus aliquam accusamus
 						natus placeat temporibus iusto quibusdam eum repudiandae

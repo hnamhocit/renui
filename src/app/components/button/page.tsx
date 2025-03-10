@@ -31,7 +31,20 @@ export default function ButtonPage() {
 			/>
 
 			<Section
+				code={`<Button>RenUI</Button>`}
+				label='Sample'>
+				<Button>RenUI</Button>
+			</Section>
+
+			<Section
 				flex
+				code={`const sizes = ['sm', 'md', 'lg']
+return sizes.map((size) => (
+	<Button
+		key={size}
+		size={size}>
+		Text
+	</Button>))`}
 				label='Size'>
 				{sizes.map((size) => (
 					<Button
@@ -44,6 +57,13 @@ export default function ButtonPage() {
 
 			<Section
 				flex
+				code={`const colors = ['default','primary','secondary','danger','success','warning',]
+return colors.map((color) => (
+	<Button
+		key={color}
+		color={color}>
+		Text
+	</Button>))`}
 				label='Color'>
 				{colors.map((color) => (
 					<Button
@@ -56,6 +76,21 @@ export default function ButtonPage() {
 
 			<Section
 				flex
+				code={`const variants = ['solid','flat','border','light',]
+return variants.map((variant) => (
+	<div
+		key={variant}
+		className='space-y-2'>
+			{colors.map((color) => (
+				<Button
+					isRounded
+					variant={variant}
+					key={color}
+					color={color}>
+					{variant}
+				</Button>
+			))}
+	</div>))`}
 				label='Variant'>
 				{variants.map((variant) => (
 					<div
@@ -76,6 +111,14 @@ export default function ButtonPage() {
 
 			<Section
 				flex
+				code={`const colors = ['default','primary','secondary','danger','success','warning',]
+return colors.map((color) => (
+	<Button
+		key={color}
+		color={color}
+		isShadow>
+		{color}
+	</Button>))`}
 				label='Shadow'>
 				{colors.map((color) => (
 					<Button
@@ -89,6 +132,21 @@ export default function ButtonPage() {
 
 			<Section
 				flex
+				code={`return <>
+	<Button
+		color='primary'
+		isRounded
+		disabled={true}>
+		Disabled
+	</Button>
+
+	<Button
+		color='primary'
+		isRounded
+		disabled
+		isLoading>
+		Loading
+	</Button> </>`}
 				label='State'>
 				<Button
 					color='primary'
@@ -108,6 +166,20 @@ export default function ButtonPage() {
 
 			<Section
 				flex
+				code={`return <>
+	<Button
+		isRounded
+		color='primary'>
+		Rounded
+	</Button>
+
+	<Button
+		isFullWidth
+		isRounded
+		color='secondary'>
+		Full width
+	</Button>
+</>`}
 				label='Other'>
 				<Button
 					isRounded

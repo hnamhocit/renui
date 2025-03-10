@@ -15,6 +15,15 @@ const ImagePage = () => {
 
 			<Section
 				flex
+				code={`<Image
+	src='/background.jpg'
+	alt='Background'
+/>
+
+<Image
+	src='/logo.jpg'
+	alt='Logo'
+/>`}
 				label='Sample'>
 				<Image
 					src='/background.jpg'
@@ -29,6 +38,17 @@ const ImagePage = () => {
 
 			<Section
 				flex
+				code={`<Image
+	src='/background.jpg'
+	alt='Background'
+	isZoom
+/>
+
+<Image
+	src='/logo.jpg'
+	alt='Logo'
+	isZoom
+/>`}
 				label='With Zoom'>
 				<Image
 					src='/background.jpg'

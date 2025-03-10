@@ -26,7 +26,12 @@ const RadioPage = () => {
 				description='Radio component is used to select one option from a list of options.'
 			/>
 
-			<Section label='Sample'>
+			<Section
+				code={`<Radio
+	checked={checked}
+	onChecked={setChecked}
+/>`}
+				label='Sample'>
 				<Radio
 					checked={checked}
 					onChecked={setChecked}
@@ -35,6 +40,14 @@ const RadioPage = () => {
 
 			<Section
 				flex
+				code={`const sizes = ['lg', 'md', 'sm']
+return sizes.map((size) => (
+	<Radio
+		key={size}
+		checked={checked}
+		onChecked={setChecked}
+		size={size as Size}
+	/>))`}
 				label='Sizes'>
 				{sizes.map((size) => (
 					<Radio
@@ -48,6 +61,15 @@ const RadioPage = () => {
 
 			<Section
 				flex
+				code={`const color = ['default','primary','secondary','success','warning','danger',]
+return color.map((color) => (
+	<Radio
+		key={color}
+		checked={checked}
+		onChecked={setChecked}
+		color={color}
+	/>
+))`}
 				label='Colors'>
 				{color.map((color) => (
 					<Radio
@@ -61,6 +83,16 @@ const RadioPage = () => {
 
 			<Section
 				flex
+				code={`const sizes = ['lg', 'md', 'sm']
+return sizes.map((size) => (
+	<Radio
+		key={size}
+		checked={checked}
+		onChecked={setChecked}
+		size={size as Size}
+		description='Description'
+	/>
+))`}
 				label='With description'>
 				{sizes.map((size) => (
 					<Radio

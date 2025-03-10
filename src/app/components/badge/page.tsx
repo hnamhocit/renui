@@ -26,6 +26,12 @@ const BadgePage = () => {
 
 			<Section
 				label='Sample'
+				code={`<Badge content={'123'}>
+	<Button isIconOnly>
+		<IoNotifications />
+	</Button>
+</Badge>
+					`}
 				className='mt-4'>
 				<Badge content={'123'}>
 					<Button isIconOnly>
@@ -36,6 +42,16 @@ const BadgePage = () => {
 
 			<Section
 				flex
+				code={`const sizes = ['lg', 'md', 'sm']
+return sizes.map((size, index) => (
+	<Badge
+		key={index}
+		size={size}
+		content={'123'}>
+		<Button isIconOnly>
+			<IoNotifications />
+		</Button>
+	</Badge>))`}
 				className='gap-12 mt-4'
 				label='Sizes'>
 				{sizes.map((size, index) => (
@@ -52,6 +68,17 @@ const BadgePage = () => {
 
 			<Section
 				flex
+				code={`const colors = ['default','primary','secondary','success','warning','danger']
+
+return colors.map((color, index) => (
+	<Badge
+		key={index}
+		color={color}
+		content={'123'}>
+		<Button isIconOnly>
+			<IoNotifications />
+		</Button>
+	</Badge>))`}
 				className='gap-7 mt-4'
 				label='Colors'>
 				{colors.map((color, index) => (

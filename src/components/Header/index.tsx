@@ -23,6 +23,8 @@ const routes = [
 	'radio',
 	'skeleton-loading',
 	'spinner',
+	'switch',
+	'tabs',
 	'textarea',
 	'toast',
 	'tooltip',

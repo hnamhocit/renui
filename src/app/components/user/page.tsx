@@ -13,7 +13,13 @@ const UserPage = () => {
 				description='User component is used to display user information.'
 			/>
 
-			<Section label='User'>
+			<Section
+				code={`<User
+	photoURL='https://avatars.githubusercontent.com/u/98753616?v=4'
+	name='Nguyen Hoang Nam'
+	description='CEO | FOUNDER of RenUI'
+/>`}
+				label='User'>
 				<User
 					photoURL='https://avatars.githubusercontent.com/u/98753616?v=4'
 					name='Nguyen Hoang Nam'
@@ -21,7 +27,18 @@ const UserPage = () => {
 				/>
 			</Section>
 
-			<Section label='Stack'>
+			<Section
+				code={`<ImageStack
+	images={[
+		'/logo.jpg',
+		'/logo.jpg',
+		'/logo.jpg',
+		'/logo.jpg',
+		'/logo.jpg',
+		'/logo.jpg',
+	]}
+/>`}
+				label='Stack'>
 				<ImageStack
 					images={[
 						'/logo.jpg',

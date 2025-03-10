@@ -31,6 +31,13 @@ const InputPage = () => {
 
 			<Section
 				flex
+				code={`const sizes = ['sm', 'md', 'lg']
+return sizes.map((size) => (
+	<Input
+		key={size}
+		size={size}
+		label={size}
+	/> ))`}
 				label='Sizes'>
 				{sizes.map((size) => (
 					<Input
@@ -41,7 +48,16 @@ const InputPage = () => {
 				))}
 			</Section>
 
-			<Section label='Variants'>
+			<Section
+				code={`const variants = ['solid','light','bordered','underlined',]
+return variants.map((variant) => (
+	<Input
+		key={variant}
+		variant={variant}
+		label={variant}
+	/>
+))`}
+				label='Variants'>
 				{variants.map((variant) => (
 					<Input
 						key={variant}
@@ -51,7 +67,24 @@ const InputPage = () => {
 				))}
 			</Section>
 
-			<Section label='Colors'>
+			<Section
+				code={`const variants = ['solid','light','bordered','underlined',]
+const colors = ['default','primary','secondary','success','warning','danger',]
+return variants
+	.filter((item) => item !== 'light')
+	.map((variant) => (
+		<div key={variant}>
+			{colors.map((color) => (
+				<Input
+					key={color}
+					variant={variant}
+					color={color}
+					label={color}
+				/>
+			))}
+		</div>
+	))`}
+				label='Colors'>
 				{variants
 					.filter((item) => item !== 'light')
 					.map((variant) => (
@@ -68,7 +101,13 @@ const InputPage = () => {
 					))}
 			</Section>
 
-			<Section label='Error handling'>
+			<Section
+				code={`<Input
+	isError
+	label='Error'
+	errorMessage='Please enter valid email!'
+/>`}
+				label='Error handling'>
 				<Input
 					isError
 					label='Error'
