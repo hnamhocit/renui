@@ -1,6 +1,63 @@
-import { Avatar, Button, Input, Link } from 'renui'
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'
+import { useContext, useState } from 'react'
+import { Avatar, Button, Input, Link, ToastContext } from 'renui'
+
+import { db } from '@/config/firebase'
 
 const Footer = () => {
+	const [email, setEmail] = useState('')
+	const [errorMessage, setErrorMessage] = useState('')
+	const [disabled, setDisabled] = useState(false)
+	const { showToast } = useContext(ToastContext)
+
+	const handleSubmit = async () => {
+		if (email.trim().length === 0) {
+			setErrorMessage('Email is required!')
+			return
+		} else if (
+			!RegExp(
+				/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+			).test(email)
+		) {
+			setErrorMessage('Please enter valid email')
+			return
+		}
+
+		try {
+			setErrorMessage('')
+			setDisabled(true)
+
+			const emailQuery = query(
+				collection(db, 'registers'),
+				where('email', '==', email),
+			)
+
+			const snapshot = await getDocs(emailQuery)
+
+			if (snapshot.docs.length > 0) {
+				setEmail('')
+				setDisabled(false)
+				showToast({
+					type: 'danger',
+					isRounded: true,
+					content: 'Email already exists!',
+				})
+				return
+			}
+
+			await addDoc(collection(db, 'registers'), { email })
+			setDisabled(false)
+			setEmail('')
+		} catch (error: unknown) {
+			setDisabled(false)
+			showToast({
+				type: 'danger',
+				content: JSON.stringify(error),
+				isRounded: true,
+			})
+		}
+	}
+
 	return (
 		<div className='flex items-start justify-evenly flex-wrap gap-5 pt-12 p-4 bg-gray-900 space-y-4 text-white'>
 			<div className='space-y-3'>
@@ -24,9 +81,16 @@ const Footer = () => {
 					<Input
 						variant='light'
 						placeholder='Eg: example@gmail.com'
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						errorMessage={errorMessage}
+						isError={errorMessage.length > 0}
 					/>
 
 					<Button
+						onClick={handleSubmit}
+						disabled={disabled}
+						isLoading={disabled}
 						variant='border'
 						color='secondary'
 						isRounded>
@@ -42,18 +106,9 @@ const Footer = () => {
 					isUnderline
 					color='secondary'
 					target='_blank'
-					href='https://github.com/hnamhocit/renui'
-					className='underline block'>
-					RenUI website
-				</Link>
-
-				<Link
-					isUnderline
-					color='secondary'
-					target='_blank'
 					href='https://github.com/hnamhocit/renui-lib'
 					className='underline block'>
-					RenUI library
+					RenUI
 				</Link>
 
 				<Link

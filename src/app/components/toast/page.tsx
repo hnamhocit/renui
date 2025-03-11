@@ -11,6 +11,7 @@ import {
 	User,
 } from 'renui'
 
+import CodeDisplay from '@/components/CodeDisplay'
 import Intro from '@/components/Intro'
 import Section from '@/components/Section'
 
@@ -44,6 +45,21 @@ const ToastPage = () => {
 				title='Toast'
 				description='Toast is a component that displays a message in a small box at the bottom of the screen.'
 			/>
+
+			<div className='space-y-3'>
+				<div className='text-2xl font-bold'>Set up</div>
+				<CodeDisplay
+					code={`//components/Provider.tsx
+"use client" // if you are using nextjs
+import { ToastProvider } from 'renui' // use at root component same level with import "renui/style.css"
+
+export default function Provider({ children }: { children: React.ReactNode }) {
+	return <ToastProvider>
+		{children}
+	</ToastProvider>
+}`}
+				/>
+			</div>
 
 			<Section
 				code={`const { showToast } = useContext(ToastContext)

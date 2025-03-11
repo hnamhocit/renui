@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useContext } from 'react'
 import { AiFillThunderbolt } from 'react-icons/ai'
 import { FaAngleRight, FaBook, FaCopy } from 'react-icons/fa'
@@ -41,13 +42,15 @@ export default function Home() {
 					</div>
 
 					<div className='flex items-center justify-center gap-3'>
-						<Button
-							isRounded
-							variant='flat'
-							color='secondary'>
-							<FaBook size={20} />
-							Documents
-						</Button>
+						<Link href={'/documents/getting-started'}>
+							<Button
+								isRounded
+								variant='flat'
+								color='secondary'>
+								<FaBook size={20} />
+								Documents
+							</Button>
+						</Link>
 
 						<Button
 							onClick={() => {
