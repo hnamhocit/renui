@@ -1,6 +1,7 @@
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'
+import Image from 'next/image'
 import { useContext, useState } from 'react'
-import { Avatar, Button, Input, Link, ToastContext } from 'renui'
+import { Button, Input, Link, ToastContext } from 'renui'
 
 import { db } from '@/config/firebase'
 
@@ -62,11 +63,14 @@ const Footer = () => {
 		<div className='flex items-start justify-evenly flex-wrap gap-5 pt-12 p-4 bg-gray-900 space-y-4 text-white'>
 			<div className='space-y-3'>
 				<div className='flex items-center gap-3'>
-					<Avatar
+					<Image
 						src='/logo.jpg'
 						alt='Logo'
-						isRounded
+						width={48}
+						height={48}
+						className='object-cover w-12 h-12 rounded-full'
 					/>
+
 					<div className='font-semibold text-xl'>RenUI</div>
 				</div>
 

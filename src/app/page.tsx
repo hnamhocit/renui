@@ -1,12 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-import { useContext } from 'react'
+import { motion } from 'motion/react'
 import { AiFillThunderbolt } from 'react-icons/ai'
-import { FaAngleRight, FaBook, FaCopy } from 'react-icons/fa'
+import { FaAngleRight } from 'react-icons/fa'
 import { FaBookOpenReader } from 'react-icons/fa6'
 import { IoShieldCheckmark } from 'react-icons/io5'
-import { Button, Image, ToastContext } from 'renui'
+import { Button, Image } from 'renui'
+
+import Content from '@/components/Header/Actions/Content'
+import Hero from '@/components/Hero'
 
 const customers = [
 	'/amazon-dark.svg',
@@ -18,75 +20,42 @@ const customers = [
 ]
 
 export default function Home() {
-	const { showToast } = useContext(ToastContext)
 	return (
 		<>
-			<div
-				className='h-[calc(100vh-64px)] flex items-center justify-center bg-cover bg-center bg-no-repeat'
-				style={{
-					backgroundImage: 'url("/background.jpg")',
-				}}>
-				<div className='text-center space-y-4 max-w-sm text-white'>
-					<div className='flex items-center justify-center gap-3 flex-wrap'>
-						<div className='text-lg p-1 font-medium bg-red-600 rounded-md uppercase'>
-							beta version. Documentation will be added later
-						</div>
-						<h1 className='text-5xl font-bold'>RenUI</h1>
-					</div>
-
-					<div className='text-xl font-semibold space-y-2'>
-						<div>Build by developers for developers, </div>
-						<div className='py-1 px-2 bg-white rounded-full text-blue-600 font-semibold'>
-							fast, reliable, easy to use 💅
-						</div>
-					</div>
-
-					<div className='flex items-center justify-center gap-3'>
-						<Link href={'/documents/getting-started'}>
-							<Button
-								isRounded
-								variant='flat'
-								color='secondary'>
-								<FaBook size={20} />
-								Documents
-							</Button>
-						</Link>
-
-						<Button
-							onClick={() => {
-								navigator.clipboard.writeText('npm i renui')
-								showToast({
-									type: 'success',
-									content: 'Copy successfully!',
-								})
-							}}
-							isRounded
-							color='primary'>
-							<div>npm i renui</div>
-
-							<FaCopy size={20} />
-						</Button>
-					</div>
+			<div className='flex'>
+				<div className='shrink-0 hidden md:block w-60 h-[calc(100vh-64)] p-4 bg-white'>
+					<Content />
 				</div>
+
+				<Hero />
 			</div>
 
 			<div className='p-4 space-y-12 bg-gray-900 text-white'>
 				<div className='space-y-7'>
-					<div className='text-3xl font-bold text-center text-blue-600'>
+					<motion.div
+						initial={{ opacity: 0, translateY: 16 }}
+						whileInView={{ opacity: 1, translateY: 0 }}
+						className='text-3xl font-bold text-center text-blue-600'>
 						Why RenUI?
-					</div>
+					</motion.div>
 
 					<div className='grid sm:grid-cols-2 md:grid-c md:grid-cols-3 gap-5'>
-						<div className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
+						<motion.div
+							initial={{ scale: 0, opacity: 0 }}
+							whileInView={{ scale: 1, opacity: 1 }}
+							className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
 							<div className='flex items-center gap-3 font-semibold text-indigo-600'>
 								<AiFillThunderbolt size={20} />
 								<div className='text-xl'>Fast</div>
 							</div>
 
 							<div className='text-sm'>Unpacked Size 463 kB</div>
-						</div>
+						</motion.div>
 
-						<div className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
+						<motion.div
+							initial={{ scale: 0, opacity: 0 }}
+							whileInView={{ scale: 1, opacity: 1 }}
+							className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
 							<div className='flex items-center gap-3 font-semibold text-indigo-600'>
 								<IoShieldCheckmark size={20} />
 								<div className='text-xl'>Reliable</div>
@@ -96,9 +65,12 @@ export default function Home() {
 								Test & debug & update, release new components
 								often
 							</div>
-						</div>
+						</motion.div>
 
-						<div className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
+						<motion.div
+							initial={{ scale: 0, opacity: 0 }}
+							whileInView={{ scale: 1, opacity: 1 }}
+							className='p-4 space-y-2 shadow-md rounded-md bg-gray-950 hover:scale-105 transition-all'>
 							<div className='flex items-center gap-3 text-indigo-600 font-semibold'>
 								<FaBookOpenReader size={20} />
 								<div className='text-xl'>Easy to use</div>
@@ -107,30 +79,40 @@ export default function Home() {
 							<div className='text-sm'>
 								Full documents with storybook, code examples.
 							</div>
-						</div>
+						</motion.div>
 					</div>
 
-					<div className='flex items-center justify-evenly gap-5'>
+					<motion.div
+						initial={{ opacity: 0, translateY: 16 }}
+						whileInView={{ opacity: 1, translateY: 0 }}
+						className='flex items-center justify-evenly gap-5'>
 						{customers.map((customer) => (
 							<Image
 								src={customer}
 								alt={customer}
 								key={customer}
+								className='max-h-16 !object-contain'
 							/>
 						))}
-					</div>
+					</motion.div>
 
-					<div className='text-center'>
+					<motion.div
+						initial={{ opacity: 0, translateY: 16 }}
+						whileInView={{ opacity: 1, translateY: 0 }}
+						className='text-center'>
 						The world&apos;s best product teams trust RenUI to
 						deliver an unrivaled experience for both developers and
 						users.{' '}
 						<span className='text-red-600 font-semibold'>
 							Just for fun :))
 						</span>
-					</div>
+					</motion.div>
 				</div>
 
-				<div className='flex items-center justify-center'>
+				<motion.div
+					initial={{ opacity: 0, translateY: 16 }}
+					whileInView={{ opacity: 1, translateY: 0 }}
+					className='flex items-center justify-center'>
 					<div className='space-y-4 max-w-md text-center'>
 						<div className='font-medium text-blue-600'>
 							Start now
@@ -157,7 +139,7 @@ export default function Home() {
 							</Button>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</>
 	)

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Dropdown, DropdownItem, Position } from 'renui'
+import { Button, colors, Dropdown, DropdownItem, Position } from 'renui'
 
 import Intro from '@/components/Intro'
 import Section from '@/components/Section'
@@ -35,6 +35,32 @@ const DropdownPage = () => {
 					<DropdownItem>123</DropdownItem>
 					<DropdownItem>123</DropdownItem>
 					<DropdownItem>123</DropdownItem>
+				</Dropdown>
+			</Section>
+
+			<Section
+				code={`<Dropdown
+	position='top-left'
+	trigger={<Button>Click me</Button>}>
+	{colors.map((color) => (
+		<DropdownItem
+			key={color}
+			color={color}>
+			{color}
+	</DropdownItem>
+	))}
+</Dropdown>`}
+				label='With colors'>
+				<Dropdown
+					position='top-left'
+					trigger={<Button>Click me</Button>}>
+					{colors.map((color) => (
+						<DropdownItem
+							key={color}
+							color={color}>
+							{color}
+						</DropdownItem>
+					))}
 				</Dropdown>
 			</Section>
 

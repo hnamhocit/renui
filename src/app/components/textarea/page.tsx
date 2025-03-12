@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Textarea } from 'renui'
+import { colors, Textarea } from 'renui'
 
 import Intro from '@/components/Intro'
 import Section from '@/components/Section'
@@ -36,6 +36,20 @@ const TextareaPage = () => {
 				/>
 
 				<div>Input: {value}</div>
+			</Section>
+
+			<Section
+				flex
+				label='With colors'
+				code={``}>
+				{colors.map((color) => (
+					<Textarea
+						key={color}
+						color={color}
+						value={value}
+						onChange={setValue}
+					/>
+				))}
 			</Section>
 
 			<Section
