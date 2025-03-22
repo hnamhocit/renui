@@ -1,16 +1,19 @@
-'use client'
+"use client";
 
-import { ReactNode } from 'react'
-import { ToastProvider } from 'renui'
+import { ReactNode } from "react";
+import { ToastProvider } from "renui";
 
-import DefaultLayout from '@/layouts/Default'
+import DefaultLayout from "@/layouts/Default";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const Provider = ({ children }: { children: ReactNode }) => {
-	return (
-		<ToastProvider>
-			<DefaultLayout>{children}</DefaultLayout>
-		</ToastProvider>
-	)
-}
+  return (
+    <ToastProvider>
+      <ThemeProvider>
+        <DefaultLayout>{children}</DefaultLayout>
+      </ThemeProvider>
+    </ToastProvider>
+  );
+};
 
-export default Provider
+export default Provider;
